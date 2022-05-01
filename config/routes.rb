@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'pages#home'
   get 'about', to: 'pages#about'
-  resources :articles, only: [:show]
+  resources :articles, only: [:show, :index]
+
   #get 'articles', to: 'articles#show_article'
 
   #at some point, figure out why the above code did not work
