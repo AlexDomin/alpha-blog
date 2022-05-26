@@ -46,7 +46,7 @@ body {
 
 #page-content {
   flex: 1 0 auto;
-  background: linear-gradient(to right, #88d391, #c1ffc5);
+  background: linear-gradient(to right, #79cd83, #c5ffc9);
 }
 
 #sticky-footer {
@@ -57,4 +57,21 @@ body {
 
 body {
   background: mintcream;
+}
+
+// .carousel-inner > .item > img {
+//   width:100px;
+//   height:80px;
+// }
+
+.carousel {
+  padding-top: 16px;
+  padding-bottom: 32px;
+  margin: 0 auto;
+  width:640px;
+  height:360px;
+}
+
+#welcome {
+  position: top center;
 }
