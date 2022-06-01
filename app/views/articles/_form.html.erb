@@ -8,15 +8,17 @@
 <% end %>
 
 <%= form_with(model: @article, local: true) do |f| %>
-  <p>
-    <%= f.label :title %><br/>
-    <%= f.text_field :title %>
-  </p>
+  <div class = "form-group">
+    <%= f.label :title, class: "form-control" %>
+    <div class = "col-10">
+      <%= f.text_field :title, class: "form-conrol", placeholder: "Enter Title Here" %>
+    </div>
+  </div>
 
-  <p>
-    <%= f.label :description %><br/>
-    <%= f.text_area :description %>
-  </p>
+  <div class = "form-group">
+    <%= f.label :description, class: "form-control" %>
+    <%= f.text_area :description, rows: 6, placeholder: "Enter Descirption Here" %>
+  </div>
 
   <p>
     <%= f.submit %>

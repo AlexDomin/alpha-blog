@@ -35,19 +35,8 @@ Things you may want to cover:
     </div>
   </div>
 
-   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="/assets/jumbo-photo-1.jpg" alt="First slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="/assets/jumbo-photo-2.jpg" alt="Second slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="/assets/jumbo-photo-3.jpg" alt="Third slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="/assets/jumbo-photo-4.jpg" alt="Third slide">
-      </div>
-    </div>
-  </div>
+  <% if params[:controller] == "articles" && params[:action] == "show" %>
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+<% else %>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-56">
+<% end %>

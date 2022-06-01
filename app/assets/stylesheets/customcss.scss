@@ -42,6 +42,7 @@
 html,
 body {
   height: 100%;
+  background: mintcream;
 }
 
 #page-content {
@@ -55,10 +56,9 @@ body {
 
 /* Other Classes for Page Styling */
 
-body {
-  background: mintcream;
-  padding-top: 56px;
-}
+// body {
+//   padding-top: 56px;
+// }
 
 // .carousel-inner > .item > img {
 //   width:100px;
@@ -73,10 +73,23 @@ body {
   height:360px;
 }
 
-#welcome {
-  position: top center;
-}
+// #welcome {
+//   position: relative;
+//   bottom: 16px;
+// }
+// above code is currently not active
 
 #card-background {
   background-color: whitesmoke;
 }
+
+#top-space {
+  position: relative;
+  top: 56px;
+}
+
+// #carousel-indicators-spacing {
+//   position: relative;
+//   top: 4px;
+// }
+// above code is currently not active
