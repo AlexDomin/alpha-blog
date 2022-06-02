@@ -45,8 +45,12 @@ body {
   background: mintcream;
 }
 
-#page-content {
+.page-content {
   flex: 1 0 auto;
+  background: linear-gradient(to right, #4c9c57, #c9fdcc);
+}
+
+#messages-background {
   background: linear-gradient(to right, #4c9c57, #c9fdcc);
 }
 
