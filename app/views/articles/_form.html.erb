@@ -1,26 +1,40 @@
-<% if @article.errors.any? %>
-  <h2>The following errors prevented the article from being saved:</h2>
-  <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= form_with(model: @article, local: true) do |f| %>
-  <div class = "form-group">
-    <%= f.label :title, class: "form-control" %>
+<div class="container">
+  <% if @article.errors.any? %>
+    <h2>The following errors prevented the article from being saved:</h2>
+    <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  
+  <div class = "row justify-content-center">
     <div class = "col-10">
-      <%= f.text_field :title, class: "form-conrol", placeholder: "Enter Title Here" %>
+      <%= form_with(model: @article, class: "shadow p-3 mb-3 rounded", id: "card-background", local: true) do |f| %>
+        <div class = "form-group">
+          <%= f.label :title, class: "col-form-label" %>
+          <div>
+            <%= f.text_field :title, class: "form-conrol col-12", placeholder: "Enter Title Here" %>
+          </div>
+        </div>
+
+        <div class = "form-group">
+          <%= f.label :description, class: "col-form-label" %>
+          <div>
+            <%= f.text_area :description, class: "form-control shadow rounded", rows: 10, placeholder: "Enter Descirption Here" %>
+          </div>
+        </div>
+
+        <div class = "form-group">
+          <%= f.submit class: "btn btn-info" %>
+        </div>
+      <% end %>
     </div>
-  </div>
 
-  <div class = "form-group">
-    <%= f.label :description, class: "form-control" %>
-    <%= f.text_area :description, rows: 6, placeholder: "Enter Descirption Here" %>
+    <% if params[:action] == "new" || params[:action] == "create" %>
+      <%= link_to '[ Cancel and return to articles listing ]', @article, class: "text-secondary mb-3" %>
+    <% elsif params[:action] == "edit" || params[:action] == "update" %>
+      <%= link_to '[ Cancel changes and return to article ]', @article, class: "text-secondary mb-3" %>
+    <% end %>
   </div>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+</div>

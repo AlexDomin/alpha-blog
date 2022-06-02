@@ -1,6 +1,6 @@
 <div id = "page-content">
-  <h1 class = "text-center">Articles Listing</h1>
-  <h2 class = "text-center"><%= link_to 'Create new article', new_article_path, class: "btn btn-light shadow bg-white rounded", id: "card-background"%></h2>
+  <h1 class = "text-center text-shadow mt-3">Listing All Articles</h1>
+  <h2 class = "text-center"><%= link_to 'Create new article', new_article_path, class: "btn btn-light shadow bg-white rounded text-secondary", id: "card-background"%></h2>
   <% @articles.each do |article| %>
   <div class = "row justify-content-md-center">
     <div class="col-8 mt-3 mb-4">
