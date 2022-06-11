@@ -79,7 +79,13 @@ body {
 // }
 // above code is currently not active
 
-#card-background {
+.card-background {
+  background-color: whitesmoke;
+}
+
+#form-style {
+  float: left;
+  width: 100%;
   background-color: whitesmoke;
 }
 
