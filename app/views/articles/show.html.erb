@@ -1,4 +1,4 @@
-<h2 class = "text-center text-shadow mt-3"><%= @article.title %></h2>
+<h3 class = "text-center text-shadow mt-3"><%= @article.title %></h3>
 <div class = "row justify-content-center">
   <div class="col-8 mt-3 mb-4">
     <div class="card text-center">
@@ -10,8 +10,8 @@
           <div class = "card-text text-left"><%= simple_format(@article.description) %></div>
           </br>
           <hr>
-          <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-info btn-sm" %>
-          <%= link_to "Delete", article_path(@article), class: "btn btn-outline-danger btn-sm margin-left", method: :delete, data: {confirm: "Are you sure?"} %>
+          <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-info btn-sm button-margin" %>
+          <%= link_to "Delete", article_path(@article), class: "btn btn-outline-danger btn-sm button-margin", method: :delete, data: {confirm: "Are you sure?"} %>
         </div>
         <div class="card-footer shadow bg-white rounded text-muted">
           <small>Created <%= time_ago_in_words(@article.created_at) %> ago,

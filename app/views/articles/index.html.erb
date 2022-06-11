@@ -1,4 +1,4 @@
-<h1 class = "text-center text-shadow mt-3">Listing All Articles</h1>
+<h1 class = "text-center text-shadow mt-3">LISTING ALL ARTICLES</h1>
 <h2 class = "text-center"><%= link_to 'Create new article', new_article_path, class: "btn btn-light shadow bg-white rounded text-secondary", id: "card-background"%></h2>
 <% @articles.each do |article| %>
 <div class = "row justify-content-center">
@@ -11,11 +11,9 @@
         <div class="card-body card-background">
           <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-success" %></h5>
           <p class="card-text"><%= truncate(article.description, length: 100) %></p>
-          <div class="button-width">
-            <%= link_to "View", article_path(article), class: "btn btn-outline-success margin-top" %>
-            <%= link_to "Edit", edit_article_path(article), class: "btn btn-outline-info margin-top margin-left" %>
-            <%= link_to "Delete", article_path(article), class: "btn btn-outline-danger margin-top margin-left", method: :delete, data: {confirm: "Are you sure?"} %>
-          </div>
+          <%= link_to "View", article_path(article), class: "btn btn-outline-success button-margin" %>
+          <%= link_to "Edit", edit_article_path(article), class: "btn btn-outline-info button-margin" %>
+          <%= link_to "Delete", article_path(article), class: "btn btn-outline-danger button-margin", method: :delete, data: {confirm: "Are you sure?"} %>
         </div>
         <div class="card-footer shadow bg-white rounded text-muted">
           <small>Created <%= time_ago_in_words(article.created_at) %> ago,
