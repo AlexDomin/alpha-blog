@@ -11,9 +11,11 @@
         <div class="card-body card-background">
           <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-success" %></h5>
           <p class="card-text"><%= truncate(article.description, length: 100) %></p>
-          <%= link_to "View", article_path(article), class: "btn btn-outline-success margin-top" %>
-          <%= link_to "Edit", edit_article_path(article), class: "btn btn-outline-info margin-top margin-left" %>
-          <%= link_to "Delete", article_path(article), class: "btn btn-outline-danger margin-top margin-left", method: :delete, data: {confirm: "Are you sure?"} %>
+          <div class="button-width">
+            <%= link_to "View", article_path(article), class: "btn btn-outline-success margin-top" %>
+            <%= link_to "Edit", edit_article_path(article), class: "btn btn-outline-info margin-top margin-left" %>
+            <%= link_to "Delete", article_path(article), class: "btn btn-outline-danger margin-top margin-left", method: :delete, data: {confirm: "Are you sure?"} %>
+          </div>
         </div>
         <div class="card-footer shadow bg-white rounded text-muted">
           <small>Created <%= time_ago_in_words(article.created_at) %> ago,
