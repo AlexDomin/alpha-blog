@@ -24,15 +24,7 @@ Things you may want to cover:
 * ...
 # alpha-blog
 
-<div class="container" id="home-container">
-  <div class="jumbotron text-center text-white">
-    <h1 class="display-4">Welcome to Alfalpha Blog</h1>
-    <p class="lead"></p>
-    <hr class="my-4">
-    <p></p>
-    <a class="btn btn-success btn-lg" href="#" role="button">Sign up!</a>
-  </div>
-</div>
+
 
   <% if params[:controller] == "articles" && params[:action] == "show" %>
   <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
@@ -40,3 +32,41 @@ Things you may want to cover:
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-56">
 <% end %>
 
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="/assets/jumbo-photo-3.jpg" alt="First slide">
+      <div class="carousel-caption d-none d-md-block" id="welcome">
+        <h1 class="display-4">Welcome to Alfalpha Blog</h1>
+        <h5>Explore!</h5>
+        <p>Find your freedom here</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="/assets/jumbo-photo-2.jpg" alt="Second slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Think Globally</h5>
+        <p>Join our world wide community</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="/assets/jumbo-photo-5.jpg" alt="Thrid slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h4 class="display-4">Sign up Today!</h4>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
