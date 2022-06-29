@@ -4,7 +4,7 @@
     <div class="card text-center">
       <div class="card text-center shadow bg-white rounded">
         <div class="card-header shadow bg-white rounded font-italic">
-          by unknown
+          by <%= @article&.user&.username || "Unknown" %>
         </div>
         <div class="card-body card-background">
           <div class = "card-text text-left"><%= simple_format(@article.description) %></div>
