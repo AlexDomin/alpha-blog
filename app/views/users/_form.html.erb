@@ -31,7 +31,11 @@
     </div>
     
     <div class="mb-3">
-      <%= link_to '[ Cancel and view articles listing ]', articles_path, class: "text-secondary mb-3" %>
+      <% if params[:action] == "edit" %>
+        <%= link_to '[ Cancel and return to user profile ]', user_path, class: "text-secondary mb-3" %>
+      <% else %>
+        <%= link_to '[ Cancel and view articles listing ]', articles_path, class: "text-secondary mb-3" %>
+      <% end %>
     </div>
   </div>
 </div>

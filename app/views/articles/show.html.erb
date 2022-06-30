@@ -4,7 +4,12 @@
     <div class="card text-center">
       <div class="card text-center shadow bg-white rounded">
         <div class="card-header shadow bg-white rounded font-italic">
-          by <%= @article&.user&.username || "Unknown" %>
+          <% if @article.user %>
+            by <%= link_to @article.user.username, user_path(@article.user) %>
+            <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
+          <% else %>
+            Unknown
+          <% end %>
         </div>
         <div class="card-body card-background">
           <div class = "card-text text-left"><%= simple_format(@article.description) %></div>
@@ -20,7 +25,8 @@
       </div>
     </div>
     <div class = "text-center mt-3">
-      <%= link_to '[ Return to articles listing ]', articles_path, class: "text-secondary mb-3" %>
+      <%= link_to '[ View blogger\'s page ]', user_path(@article.user), class: "text-secondary mb-3" %>
+      <%= link_to '[ View all articles ]', articles_path, class: "text-secondary mb-3" %>
     </div>
   </div>
 </div>
