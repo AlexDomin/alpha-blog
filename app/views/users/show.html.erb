@@ -8,7 +8,15 @@
 
 <h3 class = "text-center text-shadow mt-3">Contributions</h3>
 
-<%= render 'articles/article', obj: @user.articles %>
+<div class="apple_pagination">
+  <%= will_paginate @user_articles, :container => false %>
+</div>
+
+<%= render 'articles/article', obj: @user_articles %>
+
+<div class="apple_pagination">
+  <%= will_paginate @user_articles, :container => false %>
+</div>
 
 <div class = "text-center mb-3">
   <%= link_to '[ View all bloggers ]', users_path, class: "text-secondary" %>

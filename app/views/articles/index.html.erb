@@ -1,3 +1,12 @@
 <h1 class = "text-center text-shadow mt-3">LISTING ALL ARTICLES</h1>
 <h2 class = "text-center"><%= link_to 'Create new article', new_article_path, class: "btn btn-light shadow bg-white rounded text-secondary", id: "card-background"%></h2>
+
+<div class="apple_pagination">
+  <%= will_paginate @articles, :container => false %>
+</div>
+
 <%= render 'article', obj: @articles %>
+
+<div class="apple_pagination">
+  <%= will_paginate @articles, :container => false %>
+</div>
