@@ -20,7 +20,11 @@
         <%= link_to "Our Bloggers", users_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
+        <% if session[:user_id] == nil %>
+          <%= link_to 'Log in', login_path, class: "nav-link" %>
+        <% else %>
+          <%= link_to 'Log out', logout_path, class: "nav-link", method: :delete %>
+        <% end %>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
