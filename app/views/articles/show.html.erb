@@ -8,15 +8,17 @@
             by <%= link_to @article.user.username, user_path(@article.user) %>
             <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
           <% else %>
-            Unknown
+            by Unknown
           <% end %>
         </div>
         <div class="card-body card-background">
           <div class = "card-text text-left"><%= simple_format(@article.description) %></div>
           </br>
           <hr>
-          <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-info btn-sm button-margin" %>
-          <%= link_to "Delete", article_path(@article), class: "btn btn-outline-danger btn-sm button-margin", method: :delete, data: {confirm: "Are you sure?"} %>
+          <% if logged_in? && @article.user == current_user %>
+            <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-info btn-sm button-margin" %>
+            <%= link_to "Delete", article_path(@article), class: "btn btn-outline-danger btn-sm button-margin", method: :delete, data: {confirm: "Are you sure?"} %>
+          <% end %>
         </div>
         <div class="card-footer shadow bg-white rounded text-muted">
           <small>Created <%= time_ago_in_words(@article.created_at) %> ago,
