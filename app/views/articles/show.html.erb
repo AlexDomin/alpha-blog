@@ -27,7 +27,9 @@
       </div>
     </div>
     <div class = "text-center mt-3">
-      <%= link_to '[ View blogger\'s page ]', user_path(@article.user), class: "text-secondary mb-3" %>
+      <% if @article.user %>
+        <%= link_to '[ View blogger\'s page ]', user_path(@article.user), class: "text-secondary mb-3" %>
+      <% end %>
       <%= link_to '[ View all articles ]', articles_path, class: "text-secondary mb-3" %>
     </div>
   </div>

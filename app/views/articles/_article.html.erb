@@ -7,7 +7,7 @@
             <% if article.user %>
               by <%= link_to article.user.username, user_path(article.user) %>
             <% else %>
-              Unknown
+              by Unknown
             <% end %>
           </div>
           <div class="card-body card-background">
