@@ -70,3 +70,11 @@ Things you may want to cover:
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+pulled from user show page when logged in:
+
+<% if logged_in? && @user == current_user %>
+  <div class = "text-center mt-4">
+    <%= link_to "Edit your profile", edit_user_path, class: "btn btn-info button-margin" %>
+  </div>
+<% end %>
