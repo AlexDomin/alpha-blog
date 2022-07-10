@@ -29,7 +29,11 @@
       <% if logged_in? %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-            <%= 'Hi, ' + current_user.username %>
+            <% if current_user.admin? %>
+              <%= 'Hi, ' + current_user.username + ' (Admin)' %>
+            <% else %>
+              <%= 'Hi, ' + current_user.username %>
+            <% end %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to "Create new article", new_article_path, class: "dropdown-item" %>

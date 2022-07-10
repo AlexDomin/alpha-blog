@@ -3,7 +3,7 @@
 
 <% if current_user %>
   <div class = "text-center">
-    <%= link_to "Delete Account", user_path(current_user), class: "btn btn-outline-danger", method: :delete, 
-    data: { confirm: "WARNING: Deleting your account will also delete all articles associated with your account.  Once this is done, it cannot be undone.  Are you sure you want to continue?" } %>
+    <%= link_to "Delete Profile", user_path(current_user), class: "btn btn-outline-danger", method: :delete, 
+    data: { confirm: "WARNING: Deleting your profile will also delete all articles associated with your account.  Once this is done, it cannot be undone.  Are you sure you want to continue?" } %>
   </div>
 <% end %>

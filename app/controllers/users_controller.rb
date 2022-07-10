@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    byebug
     if @user.update(user_params)
       flash[:notice] = "Your profile was updated successfully!"
       redirect_to user_path
@@ -40,7 +41,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    session[:user_id] = nil
+    session[:user_id] = nil if @user == current_user
     flash[:notice] = "Account and all associated articles have been successfully deleted."
     redirect_to root_path
   end
@@ -56,7 +57,7 @@ class UsersController < ApplicationController
   end
 
   def require_current_user
-    if current_user != @user
+    if current_user != @user && !current_user.admin?
       flash[:alert] = "You are not authorized to perform this action."
       redirect_to user_path
     end

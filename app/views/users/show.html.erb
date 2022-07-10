@@ -2,6 +2,13 @@
 
 <%= gravatar_for @user, size: 200 %>
 
+<% if current_user.admin? %>
+  <div class = "text-center">
+    <%= link_to "Delete Account", user_path(@user), class: "btn btn-outline-danger mt-4", method: :delete, 
+    data: { confirm: "Are you sure you want to delete this user and all articles associated with this user?" } %>
+  </div>
+<% end %>
+
 <h3 class = "text-center text-shadow mt-3">Contributions</h3>
 
 <div class="apple_pagination">
