@@ -18,15 +18,15 @@
         </div>
 
         <div class = "form-group">
-          <%= f.submit class: "btn btn-info float-right" %>
+          <%= f.submit class: "btn btn-secondary float-right" %>
         </div>
       <% end %>
     </div>
 
     <% if params[:action] == "new" || params[:action] == "create" %>
-      <%= link_to '[ Cancel and return to articles listing ]', @article, class: "text-secondary mb-3" %>
+      <%= link_to '[ Cancel and return to articles listing ]', @article, class: "text-dark mb-3" %>
     <% elsif params[:action] == "edit" || params[:action] == "update" %>
-      <%= link_to '[ Cancel changes and return to article ]', @article, class: "text-secondary mb-3" %>
+      <%= link_to '[ Cancel changes and return to article ]', @article, class: "text-dark mb-3" %>
     <% end %>
   </div>
 </div>

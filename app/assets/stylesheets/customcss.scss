@@ -11,15 +11,17 @@
 }
 
 .nav-link:hover {
-  color: lightgreen !important;
+  color: gray !important;
+  // color: lightgreen !important;
 }
 
 .navbar-brand:hover {
-  color: lightgreen !important;
+  color: gray !important;
+  // color: lightgreen !important;
 }
 
 .jumbotron {
-  background-image: asset-url('jumbo-photo-2.jpg');
+  background-image: asset-url('moon_landing.avif');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -47,7 +49,8 @@ body {
 
 .page-content {
   flex: 1 0 auto;
-  background: linear-gradient(to right, #4c9c57, #c9fdcc);
+  background: linear-gradient(to right, #6c646c, #d8cdd4);
+  // background: linear-gradient(to right, #4c9c57, #c9fdcc);
 }
 
 #sticky-footer {
@@ -104,10 +107,34 @@ body {
   color: rgba(245, 245, 245, 0.8);
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-shadow:
-  -1px -1px 0 rgb(115, 115, 115),
-  1px -1px 0 rgb(115, 115, 115),
-  -1px 1px 0 rgb(115, 115, 115),
-  1px 1px 0 rgb(115, 115, 115);
+  -1px -1px 0 black,
+  1px -1px 0 black,
+  -1px 1px 0 black,
+  1px 1px 0 black;
+  // -1px -1px 0 rgb(115, 115, 115),
+  // 1px -1px 0 rgb(115, 115, 115),
+  // -1px 1px 0 rgb(115, 115, 115),
+  // 1px 1px 0 rgb(115, 115, 115);
+}
+
+#text-shadow-jumbo {
+  color: rgba(245, 245, 245, 0.946);
+  // font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-shadow:
+  -2px -2px 0 black,
+  2px -2px 0 black,
+  -2px 2px 0 black,
+  2px 2px 0 black;
+}
+
+#text-shadow-jumbo-lead {
+  color: rgba(245, 245, 245, 0.946);
+  // font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-shadow:
+  -1px -1px 0 black,
+  1px -1px 0 black,
+  -1px 1px 0 black,
+  1px 1px 0 black;
 }
 
 // #carousel-indicators-spacing {
@@ -168,7 +195,8 @@ body {
     overflow: hidden; }
 
 .apple_pagination {
-  background: linear-gradient(to right, #4c9c57, #c9fdcc);
+  background: linear-gradient(to right, #6c646c, #d8cdd4);
+  // background: linear-gradient(to right, #4c9c57, #c9fdcc);
   /* border: 1px solid #e5e5e5; */
   text-align: center;
   padding: 1em;
@@ -176,7 +204,8 @@ body {
   .apple_pagination a, .apple_pagination span {
     padding: 0.2em 0.3em; }
   .apple_pagination .disabled {
-    color: #838383bb; }
+    color: rgba(69, 69, 69, 0.535); }
+    // color: #838383bb; }
   .apple_pagination .current {
     font-style: normal;
     font-weight: bold;
