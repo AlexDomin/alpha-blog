@@ -19,7 +19,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    byebug
     if @user.update(user_params)
       flash[:notice] = "Your profile was updated successfully!"
       redirect_to user_path
