@@ -11,6 +11,8 @@
       <% elsif params[:action] == "edit" || params[:action] == "update" %>
         <h4 class="alert-heading">The following errors prevented the profile from being updated:</h4>
       <% end %>
+    <% elsif obj == @category %>
+      <h4 class="alert-heading">The following errors prevented the category from being created:</h4>
     <% end %>
     <ul>
       <% obj.errors.full_messages.each do |msg| %>
