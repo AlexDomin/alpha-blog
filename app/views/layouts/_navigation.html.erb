@@ -22,6 +22,22 @@
           <%= link_to "View Articles", articles_path, class: "nav-link" %>
         </li>
       <% end %>
+      <% if logged_in? && current_user.admin? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            Categories
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to "View categories", categories_path, class: "dropdown-item" %>
+            <div class="dropdown-divider"></div>
+            <%= link_to "Create new category", new_category_path, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "View Categories", categories_path, class: "nav-link" %>
+        </li>
+      <% end %>
       <li class="nav-item">
         <%= link_to "Our Bloggers", users_path, class: "nav-link" %>
       </li>
