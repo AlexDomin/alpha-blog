@@ -78,3 +78,11 @@ pulled from user show page when logged in:
     <%= link_to "Edit your profile", edit_user_path, class: "btn btn-info button-margin" %>
   </div>
 <% end %>
+
+article.categories iteration from articles show view
+
+<% if @article.categories %>
+  <% @article.categories.each do |category| %>
+    <%= link_to category.name, category_path(category) %>
+  <% end %>
+<% end %>
