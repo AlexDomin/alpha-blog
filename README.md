@@ -26,11 +26,13 @@ Things you may want to cover:
 
 
 
-  <% if params[:controller] == "articles" && params[:action] == "show" %>
+<% if params[:controller] == "articles" && params[:action] == "show" %>
   <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
 <% else %>
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-56">
 <% end %>
+
+carousel:
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -79,10 +81,53 @@ pulled from user show page when logged in:
   </div>
 <% end %>
 
-article.categories iteration from articles show view
+article.categories iteration from articles show view:
 
 <% if @article.categories %>
   <% @article.categories.each do |category| %>
     <%= link_to category.name, category_path(category) %>
   <% end %>
 <% end %>
+
+particles:
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous">
+</script>
+
+
+<div id="particle"></div>
+
+<div class="container"> 
+<div class="jumbotron" id="jumbo">
+  <div class="inner">
+        <h1 class="whitney">A Title Here</h1>
+        <h3 class="gotham">A Sub Title Here</h3>
+        <p>Using bootstrap's jumbotron with the particle.js background to make the jumbotron semi-transparent.</p>
+        <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+  </div>
+    </div>
+</div>
+<%= javascript_pack_tag 'particles' %>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+lunar month landing page:
+
+<div class="container" id="home-container">
+  <div class="jumbotron text-center text-white">
+    <h1 class="display-4" id="text-shadow-jumbo">Welcome to Alfalpha Blog</h1>
+    <p class="lead" id="text-shadow-jumbo-lead">July is Lunar Month!  <%= link_to "Click here", "https://youtu.be/1Mqsd0ru_pc" %> to learn why Alfalpha Blog celebrates NASA achievements.</p>
+    <hr class="my-4">
+    <p></p>
+    <%= link_to 'Sign up!', signup_path, class: "btn btn-light btn-lg" %>
+  </div>
+</div>
