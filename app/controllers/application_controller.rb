@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
-
   helper_method :current_user, :logged_in?
+  before_action :set_query
+
+  def set_query
+    @query = Article.ransack(params[:q])
+  end
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

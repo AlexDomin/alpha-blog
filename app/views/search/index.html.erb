@@ -1,0 +1,23 @@
+<h1 class = "text-center text-shadow mt-3"><%= pluralize(@articles.count, "Search Result") %></h1>
+
+<div class="container">
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th><%= sort_link(@query, :title, "Title", default_order: :asc) %></th>
+        <th><%= sort_link(@query, :description, "Article Content") %></th>
+        <th><%= sort_link(@query, :username, "Users") %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @articles.each do |article| %>
+        <tr>
+          <td><%= link_to article.title, article %></td>
+          <td><%= article.description.truncate_words(25) %></td>
+          <td><%= link_to article.user.username, article.user %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
