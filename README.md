@@ -210,3 +210,16 @@ new (particle) home page:
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script><!-- Latest compiled and minified CSS -->
 
 <%= javascript_pack_tag 'particles' %>
+
+
+Summer is lunar season home page:
+
+<div class="container" id="home-container">
+  <div class="jumbotron text-center text-white">
+    <h1 class="display-4" id="text-shadow-jumbo">Welcome to Alfalpha Blog</h1>
+    <p class="lead" id="text-shadow-jumbo-lead">Summer is Lunar Season!  <%= link_to "Click here", "https://youtu.be/1Mqsd0ru_pc" %> to learn why Alfalpha Blog celebrates NASA achievements.</p>
+    <hr class="my-4">
+    <p></p>
+    <%= link_to 'Sign up!', signup_path, class: "btn btn-light btn-lg" %>
+  </div>
+</div>
