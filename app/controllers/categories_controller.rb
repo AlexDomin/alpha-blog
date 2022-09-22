@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
   end 
   
   def show
-    @articles = @category.articles.paginate(page: params[:page], per_page: 5)
+    @articles = @category.articles.order('updated_at DESC').paginate(page: params[:page], per_page: 5)
   end
 
   def edit
@@ -33,7 +33,7 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    @categories = Category.paginate(page: params[:page], per_page: 5)
+    @categories = Category.order('updated_at DESC').paginate(page: params[:page], per_page: 5)
   end
 
   private
