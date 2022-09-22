@@ -1,41 +1,43 @@
 <h1 class = "text-center text-shadow mt-3"><%= @article.title %></h1>
-<div class = "row justify-content-center mr-0">
-  <div class="col-8 mt-3 mb-4">
-    <div class="card text-center">
-      <div class="card text-center shadow bg-white rounded">
-        <div class="card-header shadow bg-white rounded font-italic">
-          <% if @article.user %>
-            by <%= link_to @article.user.username, user_path(@article.user) %>
-            <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
-          <% else %>
-            by Unknown
-          <% end %>
-          <% if @article.categories.any? %>
-            <div class="mt-2">
-              <%= render @article.categories %>
-            </div>
-          <% end %>
-        </div>
-        <div class="card-body card-background">
-          <div class = "card-text text-left"><%= simple_format(@article.description) %></div>
-          </br>
-          <hr>
-          <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
-            <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-info btn-sm button-margin" %>
-            <%= link_to "Delete", article_path(@article), class: "btn btn-outline-danger btn-sm button-margin", method: :delete, data: {confirm: "Are you sure?"} %>
-          <% end %>
-        </div>
-        <div class="card-footer shadow bg-white rounded text-muted">
-          <small>Created <%= time_ago_in_words(@article.created_at) %> ago,
-          edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
+<div class="container">
+  <div class = "row justify-content-center">
+    <div class="col-12 mt-3 mb-4">
+      <div class="card text-center">
+        <div class="card text-center shadow bg-white rounded">
+          <div class="card-header shadow bg-white rounded font-italic">
+            <% if @article.user %>
+              by <%= link_to @article.user.username, user_path(@article.user) %>
+              <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
+            <% else %>
+              by Unknown
+            <% end %>
+            <% if @article.categories.any? %>
+              <div class="mt-2">
+                <%= render @article.categories %>
+              </div>
+            <% end %>
+          </div>
+          <div class="card-body card-background">
+            <div class = "card-text text-left"><%= simple_format(@article.description) %></div>
+            </br>
+            <hr>
+            <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
+              <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-info btn-sm button-margin" %>
+              <%= link_to "Delete", article_path(@article), class: "btn btn-outline-danger btn-sm button-margin", method: :delete, data: {confirm: "Are you sure?"} %>
+            <% end %>
+          </div>
+          <div class="card-footer shadow bg-white rounded text-muted">
+            <small>Created <%= time_ago_in_words(@article.created_at) %> ago,
+            edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
+          </div>
         </div>
       </div>
-    </div>
-    <div class = "text-center mt-3">
-      <% if @article.user %>
-        <%= link_to '[ View blogger\'s page ]', user_path(@article.user), class: "text-dark mb-3" %>
-      <% end %>
-      <%= link_to '[ View all articles ]', articles_path, class: "text-dark mb-3" %>
+      <div class = "text-center mt-3">
+        <% if @article.user %>
+          <%= link_to '[ View blogger\'s page ]', user_path(@article.user), class: "text-dark mb-3" %>
+        <% end %>
+        <%= link_to '[ View all articles ]', articles_path, class: "text-dark mb-3" %>
+      </div>
     </div>
   </div>
 </div>

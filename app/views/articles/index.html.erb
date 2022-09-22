@@ -8,7 +8,9 @@
   <%= will_paginate @articles, :container => false %>
 </div>
 
-<%= render 'article', obj: @articles %>
+<div class="container">
+  <%= render 'article', obj: @articles %>
+</div>
 
 <div class="apple_pagination">
   <%= will_paginate @articles, :container => false %>

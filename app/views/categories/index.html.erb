@@ -4,9 +4,10 @@
   <%= will_paginate @categories, :container => false %>
 </div>
 
+<div class="container">
 <% @categories.each do |category| %>
-  <div class = "row justify-content-center mr-0">
-    <div class="col-8 mt-3 mb-4">
+  <div class = "row justify-content-center">
+    <div class="col-12 mt-3 mb-4">
       <div class="card text-center">
         <div class="card text-center shadow bg-white rounded">
           <div class="card-body card-background">
@@ -22,6 +23,7 @@
     </div>
   </div>
 <% end %>
+</div>
 
 <div class="apple_pagination">
   <%= will_paginate @categories, :container => false %>

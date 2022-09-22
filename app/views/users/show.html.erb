@@ -15,7 +15,9 @@
   <%= will_paginate @user_articles, :container => false %>
 </div>
 
-<%= render 'articles/article', obj: @user_articles %>
+<div class="container">
+  <%= render 'articles/article', obj: @user_articles %>
+</div>
 
 <div class="apple_pagination">
   <%= will_paginate @user_articles, :container => false %>
