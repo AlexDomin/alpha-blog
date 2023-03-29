@@ -2,8 +2,12 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
   before_action :set_query
 
+  # def set_query
+  #   @query = Article.ransack(params[:q])
+  # end
+
   def set_query
-    @query = Article.ransack(params[:q])
+    @query = params[:q]
   end
 
   def current_user

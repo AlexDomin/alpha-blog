@@ -1,6 +1,4 @@
-<%= search_form_for(@query, url: search_path, method: :get, class:'d-flex') do |f| %>
-  <%= f.search_field :title_or_description_or_user_email_or_user_username_or_categories_name_i_cont_any, 
-  placeholder: "Search...",
-  class: "form-control me-2" %>
+<%= form_with url: search_path, method: :get, class:'d-flex' do |f| %>
+  <%= f.search_field :q, placeholder: "Search...", value: params[:q]%>
   <%= f.submit "Search", class: "btn btn-outline-secondary ml-2" %>
 <% end %>

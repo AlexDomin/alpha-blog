@@ -223,3 +223,15 @@ Summer is lunar season home page:
     <%= link_to 'Sign up!', signup_path, class: "btn btn-light btn-lg" %>
   </div>
 </div>
+
+Search form experiment with no gem:
+
+<%= search_form_for(@query, url: search_path, method: :get, `class:'d-flex'`) do |f| %>
+
+  <!-- <%= f.search_field :title_or_description_or_user_email_or_user_username_or_categories_name_i_cont_any, 
+  placeholder: "Search...",
+  class: "form-control me-2" %> -->
+
+  <%= f.search_field :q, params[:q], placeholder: "Search..." %>
+  <%= f.submit "Search", class: "btn btn-outline-secondary ml-2" %>
+<% end %>

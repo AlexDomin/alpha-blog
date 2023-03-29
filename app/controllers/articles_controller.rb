@@ -6,9 +6,34 @@ class ArticlesController < ApplicationController
   def show
   end
 
+  # def index
+  #   @articles = Article.order('updated_at DESC').paginate(page: params[:page], per_page: 5)
+  # end
+
+  # def index
+  #   if params[:q].present?
+  #     @articles = Article.where("title LIKE ? OR description LIKE ?", "#{params[:q]}", "#{params[:q]}").order(sort_column + " " + sort_direction).paginate(page: params[:page], per_page: 5)
+  #   else
+  #     @articles = Article.order('updated_at DESC').paginate(page: params[:page], per_page: 5)
+  #   end
+  # end
+
   def index
     @articles = Article.order('updated_at DESC').paginate(page: params[:page], per_page: 5)
   end
+  
+
+  # def index
+  #   @query = params[:q]
+  #   if @query
+  #     @articles = Article.where("title ILIKE ? OR description ILIKE ?", "%#{@query}%", "%#{@query}%")
+  #                        .joins(:user, :categories)
+  #                        .select("articles.*, users.username, categories.name as category_name")
+  #                        .order("#{params[:sort]} #{params[:direction]}")
+  #   else
+  #     @articles = Article.all
+  #   end
+  # end  
 
   def new
     @article = Article.new
